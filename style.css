@@ -134,16 +134,6 @@ li>input[type="text"] {
   width: 226px;
 }
 
-.button_delete img {
-  height: 2em;
-  transform: rotateZ(45deg);
-  transition: transform 200ms ease-in;
-}
-
-.button_delete img:hover {
-  transform: rotateZ(0);
-}
-
 /* Completed */
 .completed__list label {
   text-decoration: line-through;
@@ -162,4 +152,26 @@ li>input[type="text"] {
 
 .todo__edit-item label {
   display: none;
+}
+
+.button_delete {
+  position: relative;
+  width: 48px;
+  height: 33px;
+}
+
+.button_delete::before {
+  position: absolute;
+  left: 9px;
+  top: 1px;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url("./remove.svg");
+  transform: rotateZ(45deg);
+  transition: transform 200ms ease-in;
+}
+
+.button_delete:hover::before {
+  transform: rotateZ(0);
 }
