@@ -141,7 +141,7 @@ li>input[type="text"] {
 }
 
 /* Edit Task */
-.list li .input-text {
+.item .input-text {
   display: none;
 }
 
@@ -149,6 +149,7 @@ li>input[type="text"] {
   display: inline-block;
   width: 224px;
 }
+
 
 .todo__edit-item label {
   display: none;
