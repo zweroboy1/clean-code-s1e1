@@ -9,10 +9,10 @@ const escapeSpecialChars = (str) => {
 function createNewTaskElement(taskString) {
   taskString = escapeSpecialChars(taskString);
   const listItem = document.createElement("li");
-  listItem.className = "item";
-  listItem.innerHTML = `<input class="checkbox" type="checkbox">
-  <label class="item__label task">${taskString}</label>
-  <input class="item__input input-text task" type="text" value="${taskString}">
+  listItem.className = "item__container";
+  listItem.innerHTML = `<input class="item__checkbox" type="checkbox">
+  <label class="item__label">${taskString}</label>
+  <input class="item__input input-text" type="text" value="${taskString}">
   <button class="button button_edit">Edit</button>
   <button class="button button_delete"></button>`;
   return listItem;
@@ -36,14 +36,14 @@ function editTask() {
   const editInput = listItem.querySelector(".input-text");
   const label = listItem.querySelector("label");
   const editBtn = listItem.querySelector(".button_edit");
-  if (listItem.classList.contains("todo__edit-item")) {
+  if (listItem.classList.contains("item__container_edit-mode")) {
     label.innerText = editInput.value;
     editBtn.innerText = "Edit";
   } else {
     editInput.value = label.innerText;
     editBtn.innerText = "Save";
   }
-  listItem.classList.toggle("todo__edit-item");
+  listItem.classList.toggle("item__container_edit-mode");
 }
 
 function deleteTask() {
@@ -73,7 +73,7 @@ function ajaxRequest() {
 
 function bindTaskEvents(taskListItem, checkBoxEventHandler) {
   console.log("bind list item events");
-  const checkBox = taskListItem.querySelector(".checkbox");
+  const checkBox = taskListItem.querySelector(".item__checkbox");
   const editButton = taskListItem.querySelector(".button_edit");
   const deleteButton = taskListItem.querySelector(".button_delete");
   editButton.onclick = editTask;
