@@ -14,7 +14,7 @@ function createNewTaskElement(taskString) {
   <label class="item__label">${taskString}</label>
   <input class="item__input input-text" type="text" value="${taskString}">
   <button class="button button_edit">Edit</button>
-  <button class="button button_delete"></button>`;
+  <button class="button button_delete" title="delete item"></button>`;
   return listItem;
 }
 
