@@ -11,8 +11,8 @@ function createNewTaskElement(taskString) {
   const listItem = document.createElement("li");
   listItem.className = "item";
   listItem.innerHTML = `<input class="checkbox" type="checkbox">
-  <label class="task">${taskString}</label>
-  <input class="input-text task" type="text" value="${taskString}">
+  <label class="item__label task">${taskString}</label>
+  <input class="item__input input-text task" type="text" value="${taskString}">
   <button class="button button_edit">Edit</button>
   <button class="button button_delete"></button>`;
   return listItem;

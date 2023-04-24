@@ -41,6 +41,7 @@ body {
 
 .add-item__wrapper {
   display: flex;
+  padding-top: 20px;
 }
 
 .add-item__input {
@@ -56,10 +57,6 @@ body {
 .list {
   margin: 0;
   padding: 0;
-}
-
-.item {
-  list-style: none;
 }
 
 .button {
@@ -112,32 +109,29 @@ body {
 }
 
 /* Task list */
-li {
+.item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
+  list-style: none;
   overflow: hidden;
 }
 
-li>* {
-  vertical-align: middle;
-}
-
-li>label {
+.item__label {
   box-sizing: border-box;
   width: 226px;
   padding-left: 10px;
   font-size: 18px;
 }
 
-li>input[type="text"] {
+.item__input {
   width: 226px;
 }
 
 /* Completed */
-.completed__list label {
+.completed__list .item__label {
   color: #888;
   text-decoration: line-through;
 }
