@@ -54,6 +54,11 @@
   width: 56%;
 }
 
+.item {
+  margin: 0;
+  padding: 0;
+}
+
 .item__container {
   display: flex;
   justify-content: space-between;
@@ -93,11 +98,6 @@
 .completed__list .item__label {
   color: #888;
   text-decoration: line-through;
-}
-
-.list {
-  margin: 0;
-  padding: 0;
 }
 
 .title {
